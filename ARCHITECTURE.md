@@ -10,9 +10,10 @@ trigger this split executes) and `docs/decisions.jsonl` for the split
 decision itself.
 
 glemy is consumed here as a normal Gleam dependency (`gleam.toml`'s
-`[dependencies]` — currently a git dependency pinned to a specific
-commit SHA, not yet a Hex dependency; see glemy's own
-`docs/decisions.jsonl` for when/whether that changes). Every import of
+`[dependencies]` — a real Hex dependency, `glemy = ">= 0.1.0 and <
+0.2.0"`, since glemy's own 0.1.0 release; a git dependency pinned to a
+commit SHA before that — see glemy's own `docs/decisions.jsonl` for
+both the split and the Hex-publish decisions). Every import of
 `glemy/physics`, `glemy/render`, `glemy/io`, etc. resolves there.
 Everything under `glemy_games/` in this repo's own `src/`/`test/` trees
 is genre-specific game code that glemy itself deliberately has no
@@ -97,8 +98,11 @@ them; the reasoning is identical here, only the target code differs.
 
 ## Bumping the glemy dependency
 
-`gleam.toml`'s `glemy` git dependency is pinned to a specific commit SHA
-deliberately, not a branch — bump it as a real, reviewed change (mirrors
-glemy-website's own `STABLE_GLEMY_REF` "deliberate promotion" precedent)
-whenever this repo wants to pick up an engine change, never silently or
-automatically.
+`gleam.toml`'s `glemy` requirement (`>= 0.1.0 and < 0.2.0`) follows
+normal Hex semver ranges now — `gleam deps download`/`gleam build` pick
+up a new patch/minor release within that range automatically, the same
+as any other Hex dependency. Widening the range itself (e.g. once glemy
+reaches 0.2.0 or 1.0.0) is a real, reviewed change, made deliberately
+once that release has actually been checked against this repo's own
+build/test/browser-check suite — not bumped blindly just because a new
+version exists on Hex.

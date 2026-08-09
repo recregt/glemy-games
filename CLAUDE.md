@@ -14,7 +14,7 @@ architectural call, not just a mechanical change.
 
 1. **Run `gleam build` and `gleam test` on both targets**
    (`gleam test`, `gleam test --target javascript`) — both must be
-   green. This transitively builds glemy too, via the git dependency —
+   green. This transitively builds glemy too, via the Hex dependency —
    a failure here can mean either repo.
 2. **Run the warnings gate**: `deno task check-warnings`. It must
    `PASS`. If it fails, don't reach for `--update` as a way to make the
