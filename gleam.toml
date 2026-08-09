@@ -1,0 +1,20 @@
+name = "glemy_games"
+version = "0.1.0"
+
+# Reference games (Tiers, Breakout, Platformer) built on the glemy
+# physics/game engine. See glemy's own repository for the engine itself:
+# https://github.com/recregt/glemy
+
+[dependencies]
+gleam_stdlib = ">= 1.0.0 and < 2.0.0"
+gleam_javascript = ">= 1.0.1 and < 2.0.0"
+glemy = { git = "https://github.com/recregt/glemy", ref = "f5aa0437671fec56071127754dfed6de838fcfac" }
+
+[dev_dependencies]
+gleeunit = ">= 1.0.0 and < 2.0.0"
+
+[javascript]
+runtime = "deno"
+
+[javascript.deno]
+allow_read = true

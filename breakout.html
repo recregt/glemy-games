@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>glemy — Breakout</title>
+<style>
+  body {
+    background: #111;
+    color: #ccc;
+    font-family: system-ui, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    gap: 1rem;
+  }
+  /* The canvas's width/height attributes (set from Gleam's own
+     texture_width/texture_height below) are its actual pixel buffer;
+     this CSS size is purely a display scale-up, kept crisp
+     (not blurred) via image-rendering: pixelated. */
+  canvas {
+    width: 512px;
+    height: 512px;
+    background: #000;
+    image-rendering: pixelated;
+  }
+  /* Positions the canvas as the reference box #glemy-paddle/.glemy-brick's
+     percentage-based left/top/width/height (set from Gleam -- see
+     game_breakout_ffi.mjs's setPaddleBox/createBrickElements) are
+     measured against. Only the ball renders through the canvas itself
+     (the one real physics entity this game has); the paddle and bricks
+     are plain overlay elements layered on top of it, not drawn onto the
+     canvas -- see decision 0052. */
+  #glemy-canvas-wrap {
+    position: relative;
+    width: 512px;
+    height: 512px;
+  }
+  #glemy-paddle {
+    position: absolute;
+    background: #5af;
+    border-radius: 2px;
+    pointer-events: none;
+  }
+  #glemy-bricks {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .glemy-brick {
+    position: absolute;
+    background: #fa5;
+    border: 1px solid #111;
+    box-sizing: border-box;
+  }
+  #glemy-score {
+    font-size: 1.25rem;
+  }
+  #glemy-status {
+    color: #5af;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  #glemy-error {
+    color: #fff;
+    background: #a00;
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+    max-width: 512px;
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+<div id="glemy-canvas-wrap">
+  <canvas id="glemy-canvas"></canvas>
+  <div id="glemy-paddle"></div>
+  <div id="glemy-bricks"></div>
+</div>
+<div id="glemy-score">Score: 0</div>
+<div id="glemy-status" hidden></div>
+<div id="glemy-error" hidden></div>
+<p>Arrow keys to move the paddle.</p>
+<script>
+  // Registered before the module script below even starts loading --
+  // same reasoning as index.html's own equivalent (decision 0026).
+  window.addEventListener("error", (event) => {
+    const el = document.getElementById("glemy-error");
+    el.textContent =
+      "Something went wrong before the game could start: " +
+      (event.error?.message ?? event.message) +
+      ". Try a hard refresh (Ctrl+Shift+R / Cmd+Shift+R).";
+    el.hidden = false;
+  });
+</script>
+<script type="module">
+  import { texture_width, texture_height } from "./build/dev/javascript/glemy/glemy/render.mjs";
+  import { main } from "./build/dev/javascript/glemy_games/glemy_games/game_breakout.mjs";
+
+  const canvas = document.getElementById("glemy-canvas");
+  canvas.width = texture_width;
+  canvas.height = texture_height;
+
+  main();
+</script>
+</body>
+</html>

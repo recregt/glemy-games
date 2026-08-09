@@ -1,0 +1,734 @@
+[
+  {
+    "target": "erlang",
+    "kind": "Empty module",
+    "location": "Module 'glemy_games/game_platformer' contains no public definitions.",
+    "snippet": ""
+  },
+  {
+    "target": "erlang",
+    "kind": "Empty module",
+    "location": "Module 'glemy/game_platformer' contains no public definitions.",
+    "snippet": ""
+  },
+  {
+    "target": "erlang",
+    "kind": "Empty module",
+    "location": "Module 'glemy/io' contains no public definitions.",
+    "snippet": ""
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_breakout.gleam",
+    "snippet": "import gleam/option.{type Option, None, Some}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_breakout.gleam",
+    "snippet": "import gleam/option.{type Option, None, Some}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_breakout.gleam",
+    "snippet": "import glemy/physics/bounds.{Bounds}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_breakout.gleam",
+    "snippet": "import glemy/physics/vector2.{Vector2}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_platformer.gleam",
+    "snippet": "import gleam/option.{type Option, None, Some}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_platformer.gleam",
+    "snippet": "import gleam/option.{type Option, None, Some}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_platformer.gleam",
+    "snippet": "import glemy/physics/bounds.{Bounds}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_platformer.gleam",
+    "snippet": "import glemy/physics/vector2.{Vector2}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_tiers.gleam",
+    "snippet": "import gleam/option.{type Option, None, Some}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_tiers.gleam",
+    "snippet": "import gleam/option.{type Option, None, Some}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_tiers.gleam",
+    "snippet": "import glemy/physics/bounds.{Bounds}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_tiers.gleam",
+    "snippet": "import glemy/physics/entity.{Entity}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_tiers.gleam",
+    "snippet": "import glemy/physics/vector2.{Vector2}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_breakout.gleam",
+    "snippet": "import gleam/option.{type Option, None, Some}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_breakout.gleam",
+    "snippet": "import gleam/option.{type Option, None, Some}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_breakout.gleam",
+    "snippet": "import glemy/physics/bounds.{Bounds}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_breakout.gleam",
+    "snippet": "import glemy/physics/vector2.{Vector2}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_platformer.gleam",
+    "snippet": "import gleam/option.{type Option, None, Some}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_platformer.gleam",
+    "snippet": "import gleam/option.{type Option, None, Some}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_platformer.gleam",
+    "snippet": "import glemy/physics/bounds.{Bounds}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_platformer.gleam",
+    "snippet": "import glemy/physics/vector2.{Vector2}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_tiers.gleam",
+    "snippet": "import gleam/option.{type Option, None, Some}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_tiers.gleam",
+    "snippet": "import gleam/option.{type Option, None, Some}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_tiers.gleam",
+    "snippet": "import glemy/physics/bounds.{Bounds}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_tiers.gleam",
+    "snippet": "import glemy/physics/entity.{Entity}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_tiers.gleam",
+    "snippet": "import glemy/physics/vector2.{Vector2}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_breakout_test.gleam",
+    "snippet": "import glemy_games/games/breakout.{type Model, Input, Model, Playing}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_breakout_test.gleam",
+    "snippet": "import glemy_games/games/breakout.{type Model, Input, Model, Playing}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_breakout_test.gleam",
+    "snippet": "import glemy_games/games/breakout.{type Model, Input, Model, Playing}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_breakout_test.gleam",
+    "snippet": "import glemy/physics/bounds.{Bounds}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_breakout_test.gleam",
+    "snippet": "import glemy/physics/entity.{type Entity, Entity}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_breakout_test.gleam",
+    "snippet": "import glemy/physics/vector2.{Vector2}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_platformer_test.gleam",
+    "snippet": "import glemy_games/games/platformer.{type Model, Input, Model, Playing}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_platformer_test.gleam",
+    "snippet": "import glemy_games/games/platformer.{type Model, Input, Model, Playing}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_platformer_test.gleam",
+    "snippet": "import glemy_games/games/platformer.{type Model, Input, Model, Playing}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_platformer_test.gleam",
+    "snippet": "import glemy/physics/bounds.{Bounds}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_platformer_test.gleam",
+    "snippet": "import glemy/physics/entity.{type Entity, Entity}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_platformer_test.gleam",
+    "snippet": "import glemy/physics/rect.{Rect}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_platformer_test.gleam",
+    "snippet": "import glemy/physics/vector2.{Vector2}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_tiers_test.gleam",
+    "snippet": "import glemy_games/games/tiers.{Input, Model}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_tiers_test.gleam",
+    "snippet": "import glemy_games/games/tiers.{Input, Model}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_tiers_test.gleam",
+    "snippet": "import glemy/physics/bounds.{Bounds}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_tiers_test.gleam",
+    "snippet": "import glemy/physics/entity.{Entity}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported item",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_tiers_test.gleam",
+    "snippet": "import glemy/physics/vector2.{Vector2}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported module",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_breakout.gleam",
+    "snippet": "import gleam/list"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported module",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_breakout.gleam",
+    "snippet": "import glemy/io"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported module",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_breakout.gleam",
+    "snippet": "import glemy/physics/rect"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported module",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_platformer.gleam",
+    "snippet": "import gleam/list"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported module",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_platformer.gleam",
+    "snippet": "import glemy/io"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported module",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_platformer.gleam",
+    "snippet": "import glemy/physics/rect"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported module",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_tiers.gleam",
+    "snippet": "import gleam/float"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported module",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_tiers.gleam",
+    "snippet": "import gleam/list"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported module",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_tiers.gleam",
+    "snippet": "import glemy/games/tiers/rules"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported module",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_tiers.gleam",
+    "snippet": "import glemy/io"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported module",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_tiers.gleam",
+    "snippet": "import glemy/physics"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported module",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_breakout.gleam",
+    "snippet": "import gleam/list"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported module",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_breakout.gleam",
+    "snippet": "import glemy/io"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported module",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_breakout.gleam",
+    "snippet": "import glemy/physics/rect"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported module",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_platformer.gleam",
+    "snippet": "import gleam/list"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported module",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_platformer.gleam",
+    "snippet": "import glemy/io"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported module",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_platformer.gleam",
+    "snippet": "import glemy/physics/rect"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported module",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_tiers.gleam",
+    "snippet": "import gleam/float"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported module",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_tiers.gleam",
+    "snippet": "import gleam/list"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported module",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_tiers.gleam",
+    "snippet": "import glemy_games/games/tiers/rules"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported module",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_tiers.gleam",
+    "snippet": "import glemy/io"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported module",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_tiers.gleam",
+    "snippet": "import glemy/physics"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported module",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_breakout_test.gleam",
+    "snippet": "import gleam/javascript/promise"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported module",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_platformer_test.gleam",
+    "snippet": "import gleam/javascript/promise"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported module",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_platformer_test.gleam",
+    "snippet": "import glemy_games/game_platformer"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported module",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_tiers_test.gleam",
+    "snippet": "import gleam/javascript/promise"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported module",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_tiers_test.gleam",
+    "snippet": "import glemy_games/games/tiers/rules"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported module",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_tiers_test.gleam",
+    "snippet": "import glemy/physics"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_breakout.gleam",
+    "snippet": "import gleam/javascript/promise.{type Promise}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_breakout.gleam",
+    "snippet": "import gleam/option.{type Option, None, Some}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_breakout.gleam",
+    "snippet": "import glemy/games/breakout.{type Model}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_breakout.gleam",
+    "snippet": "import glemy/render.{type Canvas}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_platformer.gleam",
+    "snippet": "import gleam/javascript/promise.{type Promise}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_platformer.gleam",
+    "snippet": "import gleam/option.{type Option, None, Some}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_platformer.gleam",
+    "snippet": "import glemy/games/platformer.{type Model}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_platformer.gleam",
+    "snippet": "import glemy/render.{type Canvas}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_tiers.gleam",
+    "snippet": "import gleam/javascript/promise.{type Promise}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_tiers.gleam",
+    "snippet": "import gleam/option.{type Option, None, Some}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_tiers.gleam",
+    "snippet": "import glemy/games/tiers.{type Model}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/game_tiers.gleam",
+    "snippet": "import glemy/render.{type Canvas}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/io.gleam",
+    "snippet": "import glemy/physics/vector2.{type Vector2}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/render.gleam",
+    "snippet": "import gleam/javascript/promise.{type Promise}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/render.gleam",
+    "snippet": "import glemy/physics/bounds.{type Bounds}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_breakout.gleam",
+    "snippet": "import gleam/javascript/promise.{type Promise}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_breakout.gleam",
+    "snippet": "import gleam/option.{type Option, None, Some}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_breakout.gleam",
+    "snippet": "import glemy_games/games/breakout.{type Model}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_breakout.gleam",
+    "snippet": "import glemy/render.{type Canvas}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_platformer.gleam",
+    "snippet": "import gleam/javascript/promise.{type Promise}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_platformer.gleam",
+    "snippet": "import gleam/option.{type Option, None, Some}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_platformer.gleam",
+    "snippet": "import glemy_games/games/platformer.{type Model}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_platformer.gleam",
+    "snippet": "import glemy/render.{type Canvas}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_tiers.gleam",
+    "snippet": "import gleam/javascript/promise.{type Promise}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_tiers.gleam",
+    "snippet": "import gleam/option.{type Option, None, Some}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_tiers.gleam",
+    "snippet": "import glemy_games/games/tiers.{type Model}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/src/glemy_games/game_tiers.gleam",
+    "snippet": "import glemy/render.{type Canvas}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_breakout_test.gleam",
+    "snippet": "import glemy_games/games/breakout.{type Model, Input, Model, Playing}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_breakout_test.gleam",
+    "snippet": "import glemy/physics/entity.{type Entity, Entity}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_breakout_test.gleam",
+    "snippet": "import glemy/render.{type Canvas}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_platformer_test.gleam",
+    "snippet": "import glemy_games/games/platformer.{type Model, Input, Model, Playing}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_platformer_test.gleam",
+    "snippet": "import glemy/physics/entity.{type Entity, Entity}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_platformer_test.gleam",
+    "snippet": "import glemy/render.{type Canvas}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused imported type",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_tiers_test.gleam",
+    "snippet": "import glemy/render.{type Canvas}"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused private constant",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_breakout_test.gleam",
+    "snippet": "const box = Bounds(min: Vector2(0.0, 0.0), max: Vector2(100.0, 100.0))"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused private constant",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_breakout_test.gleam",
+    "snippet": "const no_input = Input(move_left: False, move_right: False)"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused private constant",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_platformer_test.gleam",
+    "snippet": "const box = Bounds(min: Vector2(0.0, 0.0), max: Vector2(100.0, 100.0))"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused private constant",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_platformer_test.gleam",
+    "snippet": "const no_input = Input(move_left: False, move_right: False, jump: False)"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused private constant",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_tiers_test.gleam",
+    "snippet": "const box = Bounds(min: Vector2(0.0, 0.0), max: Vector2(100.0, 100.0))"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused private function",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/render.gleam",
+    "snippet": "╭ fn strip_row_padding("
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused private function",
+    "location": "/home/recregt/projects/glemy-games/build/packages/glemy/src/glemy/render.gleam",
+    "snippet": "╭ fn strip_rows("
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused private function",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_breakout_test.gleam",
+    "snippet": "fn center_pixel_rgb(bytes: List(Int)) -> #(Int, Int, Int) {"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused private function",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_breakout_test.gleam",
+    "snippet": "fn playing_model(ball: Entity) -> Model {"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused private function",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_platformer_test.gleam",
+    "snippet": "fn center_pixel_rgb(bytes: List(Int)) -> #(Int, Int, Int) {"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused private function",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_platformer_test.gleam",
+    "snippet": "fn playing_model(player: Entity) -> Model {"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused private function",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_tiers_test.gleam",
+    "snippet": "fn any_pixel_is_red(bytes: List(Int)) -> Bool {"
+  },
+  {
+    "target": "erlang",
+    "kind": "Unused private function",
+    "location": "/home/recregt/projects/glemy-games/test/glemy_games/game_tiers_test.gleam",
+    "snippet": "fn center_pixel_rgb(bytes: List(Int)) -> #(Int, Int, Int) {"
+  }
+]

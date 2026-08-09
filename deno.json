@@ -1,0 +1,9 @@
+{
+  "unstable": ["webgpu"],
+  "tasks": {
+    "browser-check": "deno run --check --allow-net --allow-read --allow-write --allow-env --allow-run --allow-ffi --allow-sys tools/browser_check.ts",
+    "browser-check-breakout": "deno run --check --allow-net --allow-read --allow-write --allow-env --allow-run --allow-ffi --allow-sys tools/browser_check_breakout.ts",
+    "browser-check-platformer": "deno run --check --allow-net --allow-read --allow-write --allow-env --allow-run --allow-ffi --allow-sys tools/browser_check_platformer.ts",
+    "check-warnings": "deno run --allow-run --allow-read --allow-write tools/check_warnings.ts"
+  }
+}

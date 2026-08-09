@@ -1,0 +1,55 @@
+name: CI
+
+# Mirrors glemy's own ci.yml (this repo's engine dependency): building
+# and testing glemy-games via `gleam deps download` transitively builds
+# glemy itself from the git dependency pinned in gleam.toml, so a green
+# run here is a real end-to-end pairing check between the two repos, not
+# just a games-only test. glemy-website's own promote-stable workflow
+# will need to poll this repo's CI too once its deploy pipeline builds
+# from glemy-games instead of glemy directly -- see glemy's
+# docs/decisions.jsonl for the split decision and glemy's
+# docs/technical-architecture.md for the current state of that pipeline.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: erlef/setup-beam@v1.24.1
+        with:
+          otp-version: "27"
+          gleam-version: "1.18.1"
+          rebar3-version: "3"
+
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: "2.x"
+
+      # `gleam test --target javascript` renders through a real WebGPU
+      # context (glemy's own decision 0015), and ubuntu-latest runners
+      # have no GPU -- lavapipe gives Deno's WebGPU backend a real
+      # software Vulkan adapter to find. Same setup as glemy's own CI.
+      - name: Install a software Vulkan driver (lavapipe) for headless WebGPU
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y mesa-vulkan-drivers libvulkan1
+
+      - name: gleam deps download
+        run: gleam deps download
+
+      - name: Build (Erlang target)
+        run: gleam build
+
+      - name: Test (Erlang target)
+        run: gleam test
+
+      - name: Build (JavaScript target)
+        run: gleam build --target javascript
+
+      - name: Test (JavaScript target)
+        run: gleam test --target javascript

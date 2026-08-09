@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>glemy</title>
+<style>
+  body {
+    background: #111;
+    color: #ccc;
+    font-family: system-ui, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    gap: 1rem;
+  }
+  /* The canvas's width/height attributes (set from Gleam's own
+     texture_width/texture_height below) are its actual pixel buffer;
+     this CSS size is purely a display scale-up, kept crisp
+     (not blurred) via image-rendering: pixelated. */
+  canvas {
+    width: 512px;
+    height: 512px;
+    background: #000;
+    cursor: pointer;
+    image-rendering: pixelated;
+  }
+  /* Positions the canvas as the reference box #glemy-danger-line's
+     `top: N%` (set once at startup by game_tiers.gleam's main, via
+     bounds.y_fraction_from_top -- see game_tiers_ffi.mjs's
+     setDangerLinePosition) is measured against. */
+  #glemy-canvas-wrap {
+    position: relative;
+    width: 512px;
+    height: 512px;
+  }
+  #glemy-danger-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    /* top is set from Gleam, not hardcoded here -- see above. */
+    border-top: 2px dashed #f55;
+    pointer-events: none;
+  }
+  /* Applied briefly (then removed -- see game_tiers_ffi.mjs's
+     triggerMergeFlash) whenever tiers.Merged fires, since a per-merge
+     particle burst at the merge's own position would need
+     resolve_all_collisions to expose merge positions, a larger change
+     than this visual feedback's value justifies on its own -- a
+     whole-canvas flash, synchronized with the merge sound, is a real,
+     honest, much cheaper way to give merges a visual "pop" instead. */
+  @keyframes glemy-merge-flash {
+    0% {
+      filter: brightness(1);
+    }
+    30% {
+      filter: brightness(1.6);
+    }
+    100% {
+      filter: brightness(1);
+    }
+  }
+  #glemy-canvas-wrap.glemy-flash {
+    animation: glemy-merge-flash 0.2s ease-out;
+  }
+  #glemy-score {
+    font-size: 1.25rem;
+  }
+  #glemy-next {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  /* background-color is set from Gleam every frame (rules.color_css),
+     not hardcoded here -- see game_tiers_ffi.mjs's setNextTierColor. */
+  #glemy-next-tier {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: 1px solid #666;
+  }
+  #glemy-game-over {
+    color: #f55;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  #glemy-error {
+    color: #fff;
+    background: #a00;
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+    max-width: 512px;
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+<div id="glemy-canvas-wrap">
+  <canvas id="glemy-canvas"></canvas>
+  <div id="glemy-danger-line"></div>
+</div>
+<div id="glemy-score">Score: 0</div>
+<div id="glemy-next">
+  Next: <div id="glemy-next-tier"></div>
+</div>
+<div id="glemy-game-over" hidden>Game Over!</div>
+<div id="glemy-error" hidden></div>
+<p>Click to drop.</p>
+<script>
+  // Registered before the module script below even starts loading, so
+  // it also catches failures *during* module load/evaluation (e.g. a
+  // stale, version-skewed cached .mjs file -- see decision 0026) that
+  // the requestAnimationFrame loop's own error handling (game_ffi.mjs)
+  // never gets a chance to run for, since the loop hasn't started yet.
+  window.addEventListener("error", (event) => {
+    const el = document.getElementById("glemy-error");
+    el.textContent =
+      "Something went wrong before the game could start: " +
+      (event.error?.message ?? event.message) +
+      ". Try a hard refresh (Ctrl+Shift+R / Cmd+Shift+R).";
+    el.hidden = false;
+  });
+</script>
+<script type="module">
+  import { texture_width, texture_height } from "./build/dev/javascript/glemy/glemy/render.mjs";
+  import { main } from "./build/dev/javascript/glemy_games/glemy_games/game_tiers.mjs";
+
+  const canvas = document.getElementById("glemy-canvas");
+  canvas.width = texture_width;
+  canvas.height = texture_height;
+
+  main();
+</script>
+</body>
+</html>
