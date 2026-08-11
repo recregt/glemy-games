@@ -244,7 +244,13 @@ fn render_and_update(model: breakout.Model, canvas: Canvas) -> Nil {
   case model.status {
     breakout.Won -> set_status_message(True, "You win!")
     breakout.Lost -> set_status_message(True, "Game over!")
-    breakout.Playing -> Nil
+    // Unlike game_breakout.gleam's own equivalent (which never sees
+    // Playing again after Won/Lost -- a single-player page just stays
+    // frozen), this runner's room really does go back to Playing after
+    // its own auto-restart (see game_breakout_server.gleam's doc
+    // comment), so the banner needs to actually be hidden again here,
+    // not just left alone.
+    breakout.Playing -> set_status_message(False, "")
   }
   let #(left, top, width, height) =
     rect.to_css(breakout.paddle_rect(model), model.bounds)

@@ -12,6 +12,18 @@
 //// tick, which is what makes this co-op rather than requiring a second
 //// paddle: any number of players share control of the one paddle.
 ////
+//// `breakout.tick` freezes the model forever once `status` leaves
+//// `Playing` (documented, single-player-correct behavior). A room on
+//// its own would inherit that permanently -- there's no browser reload
+//// to start a fresh `Model` the way a single-player page load gets one
+//// -- so this module adds one thing `breakout.gleam` itself has no
+//// concept of: after `restart_after_ticks` spent frozen, the room
+//// replaces its model with a fresh `breakout.new(play_bounds)` and
+//// broadcasts it as a new `Welcome` to every connected player (the same
+//// full-state payload a fresh joiner gets), not a lightweight
+//// `Snapshot` -- the whole brick grid needs recreating client-side, not
+//// just the handful of ids a normal tick's `events` would carry.
+////
 //// One process per WebSocket connection (managed by `mist`) forwards
 //// that connection's input to the room and relays the room's broadcast
 //// snapshots back out as text frames -- `mist` requires frames to be
@@ -56,6 +68,13 @@ pub const play_bounds = Bounds(min: vector2.zero, max: Vector2(100.0, 100.0))
 const tick_interval_ms = 33
 
 @target(erlang)
+/// How many consecutive ticks the model may sit frozen (`Won`/`Lost`)
+/// before the room resets to a fresh game -- 3 seconds' worth at
+/// `tick_interval_ms`, long enough to actually read "You win!"/"Game
+/// over!" before the board resets out from under it.
+const restart_after_ticks = 90
+
+@target(erlang)
 /// Messages the room actor receives -- from connection processes only,
 /// plus its own self-scheduled `Tick`.
 pub type RoomMessage {
@@ -69,10 +88,12 @@ pub type RoomMessage {
 /// Messages the room sends to one connection's own process, which that
 /// connection's `mist.websocket` handler relays out as a text frame --
 /// see this module's own doc comment for why it can't send the frame
-/// itself. `Welcome` is sent once, right after `Join`, carrying enough
-/// state (including still-standing bricks) for a newly-connected client
-/// to draw a game already in progress; `Snapshot` is sent every tick
-/// after that.
+/// itself. `Welcome` carries enough state (including still-standing
+/// bricks) for a client to draw the board from scratch -- sent once
+/// right after `Join`, and again to every already-connected player
+/// whenever the room auto-restarts after `Won`/`Lost` (see this
+/// module's own doc comment); `Snapshot` is the lightweight per-tick
+/// update sent the rest of the time.
 pub type ClientMessage {
   Welcome(json: String)
   Snapshot(json: String)
@@ -85,6 +106,11 @@ type RoomState {
     model: Model,
     players: List(Subject(ClientMessage)),
     inputs: List(#(Subject(ClientMessage), breakout.Input)),
+    /// Consecutive ticks spent with `model.status != Playing` -- see
+    /// `restart_after_ticks`. Reset to `0` the moment the model is
+    /// `Playing` again (a fresh game, or the room just hasn't ended
+    /// one yet).
+    frozen_ticks: Int,
   )
 }
 
@@ -97,6 +123,7 @@ fn start_room() -> actor.StartResult(Subject(RoomMessage)) {
       model: breakout.new(play_bounds),
       players: [],
       inputs: [],
+      frozen_ticks: 0,
     ))
     |> actor.returning(self)
     |> Ok
@@ -141,18 +168,46 @@ fn handle_room_message(
         // someone joins, rather than needing a second message kind to
         // re-arm the loop.
         [] -> actor.continue(state)
-        _ -> {
-          let merged = merge_inputs(state.inputs)
-          let #(next_model, events) =
-            breakout.tick(state.model, physics.max_dt, merged)
-          let snapshot = encode_snapshot(next_model, events)
-          list.each(state.players, fn(client) {
-            process.send(client, Snapshot(snapshot))
-          })
-          actor.continue(RoomState(..state, model: next_model))
-        }
+        _ -> tick_with_players(state)
       }
     }
+  }
+}
+
+@target(erlang)
+/// The `Tick` behavior once at least one player is connected -- split
+/// out of `handle_room_message` because it's now two real cases, not
+/// one: advance the game normally, or -- once frozen long enough -- give
+/// everyone a fresh one. See this module's own doc comment.
+fn tick_with_players(state: RoomState) -> actor.Next(RoomState, RoomMessage) {
+  case state.model.status {
+    breakout.Playing -> {
+      let merged = merge_inputs(state.inputs)
+      let #(next_model, events) =
+        breakout.tick(state.model, physics.max_dt, merged)
+      let snapshot = encode_snapshot(next_model, events)
+      list.each(state.players, fn(client) {
+        process.send(client, Snapshot(snapshot))
+      })
+      actor.continue(RoomState(..state, model: next_model, frozen_ticks: 0))
+    }
+    _ ->
+      case state.frozen_ticks + 1 >= restart_after_ticks {
+        True -> {
+          let fresh_model = breakout.new(play_bounds)
+          let welcome = encode_welcome(fresh_model)
+          list.each(state.players, fn(client) {
+            process.send(client, Welcome(welcome))
+          })
+          actor.continue(
+            RoomState(..state, model: fresh_model, frozen_ticks: 0),
+          )
+        }
+        False ->
+          actor.continue(
+            RoomState(..state, frozen_ticks: state.frozen_ticks + 1),
+          )
+      }
   }
 }
 
